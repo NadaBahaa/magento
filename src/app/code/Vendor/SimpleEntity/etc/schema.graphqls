@@ -1,0 +1,40 @@
+type SimpleEntity {
+    id: Int! @doc(description: "Entity ID")
+    name: String! @doc(description: "Entity name")
+    image: String @doc(description: "Entity image")
+    is_active: Boolean! @doc(description: "Is entity active")
+}
+
+type Query {
+    simpleEntities: [SimpleEntity] 
+    @resolver(class: "Vendor\\SimpleEntity\\Model\\Resolver\\SimpleEntities")
+    @doc(description: "Get list of simple entities")
+    
+    simpleEntity(id: Int!): SimpleEntity
+    @resolver(class: "Vendor\\SimpleEntity\\Model\\Resolver\\SimpleEntity")
+    @doc(description: "Get simple entity by ID")
+}
+
+type Mutation {
+    createSimpleEntity(
+        name: String!
+        image: String
+        is_active: Boolean
+    ): SimpleEntity
+    @resolver(class: "Vendor\\SimpleEntity\\Model\\Resolver\\CreateSimpleEntity")
+    @doc(description: "Create a new simple entity")
+    
+    updateSimpleEntity(
+        id: Int!
+        name: String
+        image: String
+        is_active: Boolean
+    ): SimpleEntity
+    @resolver(class: "Vendor\\SimpleEntity\\Model\\Resolver\\UpdateSimpleEntity")
+    @doc(description: "Update an existing simple entity")
+    
+    deleteSimpleEntity(id: Int!): Boolean
+    @resolver(class: "Vendor\\SimpleEntity\\Model\\Resolver\\DeleteSimpleEntity")
+    @doc(description: "Delete a simple entity")
+}
+

@@ -1,0 +1,63 @@
+type Kitchen {
+    id: Int!
+    title: String!
+    author: String
+    image: String
+    category_id: Int
+    content: String
+    is_active: Boolean!
+    created_at: String
+    updated_at: String
+}
+
+type Category {
+    id: Int!
+    title: String!
+    is_active: Boolean!
+    created_at: String
+    updated_at: String
+}
+
+type Query {
+    kitchens: [Kitchen]
+    kitchen(id: Int!): Kitchen
+    categories: [Category]
+    category(id: Int!): Category
+}
+
+type Mutation {
+    createKitchen(
+        title: String!
+        author: String
+        image: String
+        category_id: Int
+        content: String
+        is_active: Boolean!
+    ): Kitchen
+
+    updateKitchen(
+        id: Int!
+        title: String
+        author: String
+        image: String
+        category_id: Int
+        content: String
+        is_active: Boolean
+    ): Kitchen
+
+    deleteKitchen(id: Int!): Boolean
+
+    createCategory(
+        title: String!
+        is_active: Boolean!
+    ): Category
+
+    updateCategory(
+        id: Int!
+        title: String
+        is_active: Boolean
+    ): Category
+
+    deleteCategory(id: Int!): Boolean
+}
+

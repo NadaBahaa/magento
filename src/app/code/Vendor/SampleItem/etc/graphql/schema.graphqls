@@ -1,0 +1,28 @@
+type SampleItem {
+    id: Int!
+    name: String!
+    image: String
+    is_active: Boolean!
+}
+
+type Query {
+    sampleItems: [SampleItem]
+    sampleItem(id: Int!): SampleItem
+}
+
+type Mutation {
+    createSampleItem(
+        name: String!
+        image: String
+        is_active: Boolean!
+    ): SampleItem
+
+    updateSampleItem(
+        id: Int!
+        name: String
+        image: String
+        is_active: Boolean
+    ): SampleItem
+
+    deleteSampleItem(id: Int!): Boolean
+}

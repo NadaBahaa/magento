@@ -1,0 +1,82 @@
+type Kitchen {
+    id: Int! @doc(description: "Kitchen ID")
+    title: String! @doc(description: "Kitchen title")
+    author: String @doc(description: "Author name")
+    image: String @doc(description: "Kitchen image")
+    category_id: Int @doc(description: "Category ID")
+    content: String @doc(description: "Kitchen content")
+    is_active: Boolean! @doc(description: "Is kitchen active")
+}
+
+type Category {
+    id: Int! @doc(description: "Category ID")
+    title: String! @doc(description: "Category title")
+    is_active: Boolean! @doc(description: "Is category active")
+}
+
+type Query {
+    kitchens: [Kitchen] 
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\Kitchens")
+    @doc(description: "Get list of kitchens")
+    
+    kitchen(id: Int!): Kitchen
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\Kitchen")
+    @doc(description: "Get kitchen by ID")
+    
+    categories: [Category]
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\Categories")
+    @doc(description: "Get list of categories")
+    
+    category(id: Int!): Category
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\Category")
+    @doc(description: "Get category by ID")
+}
+
+type Mutation {
+    createKitchen(
+        title: String!
+        author: String
+        image: String
+        category_id: Int
+        content: String
+        is_active: Boolean
+    ): Kitchen
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\CreateKitchen")
+    @doc(description: "Create a new kitchen")
+    
+    updateKitchen(
+        id: Int!
+        title: String
+        author: String
+        image: String
+        category_id: Int
+        content: String
+        is_active: Boolean
+    ): Kitchen
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\UpdateKitchen")
+    @doc(description: "Update an existing kitchen")
+    
+    deleteKitchen(id: Int!): Boolean
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\DeleteKitchen")
+    @doc(description: "Delete a kitchen")
+    
+    createCategory(
+        title: String!
+        is_active: Boolean
+    ): Category
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\CreateCategory")
+    @doc(description: "Create a new category")
+    
+    updateCategory(
+        id: Int!
+        title: String
+        is_active: Boolean
+    ): Category
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\UpdateCategory")
+    @doc(description: "Update an existing category")
+    
+    deleteCategory(id: Int!): Boolean
+    @resolver(class: "Vendor\\KitchenGallery\\Model\\Resolver\\DeleteCategory")
+    @doc(description: "Delete a category")
+}
+

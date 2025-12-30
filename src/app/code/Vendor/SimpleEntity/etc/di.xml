@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- Grid Collections -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="vendor_simpleentity_entity_listing_data_source" xsi:type="string">Vendor\SimpleEntity\Model\ResourceModel\Entity\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Vendor\SimpleEntity\Model\ResourceModel\Entity\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">vendor_simple_entity</argument>
+            <argument name="resourceModel" xsi:type="string">Vendor\SimpleEntity\Model\ResourceModel\Entity</argument>
+        </arguments>
+    </virtualType>
+
+</config>
+

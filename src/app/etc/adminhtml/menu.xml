@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+
+    <!-- Top-level menu -->
+    <add id="Vendor_KitchenGallery::main"
+         title="KitchenGallery"
+         module="Vendor_KitchenGallery"
+         sortOrder="50"
+         resource="Vendor_KitchenGallery::main"/>
+
+    <!-- Kitchens -->
+    <add id="Vendor_KitchenGallery::kitchens"
+         title="Kitchens"
+         module="Vendor_KitchenGallery"
+         parent="Vendor_KitchenGallery::main"
+         action="kitchengallery/kitchen/index"
+         sortOrder="10"
+         resource="Vendor_KitchenGallery::kitchens"/>
+
+    <!-- Category -->
+    <add id="Vendor_KitchenGallery::category"
+         title="Category"
+         module="Vendor_KitchenGallery"
+         parent="Vendor_KitchenGallery::main"
+         action="kitchengallery/category/index"
+         sortOrder="20"
+         resource="Vendor_KitchenGallery::category"/>
+
+    <!-- Gallery -->
+    <add id="Vendor_KitchenGallery::gallery"
+         title="Gallery"
+         module="Vendor_KitchenGallery"
+         parent="Vendor_KitchenGallery::main"
+         action="kitchengallery/gallery/index"
+         sortOrder="30"
+         resource="Vendor_KitchenGallery::gallery"/>
+
+</menu>
