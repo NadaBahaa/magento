@@ -1,1 +1,14 @@
 src/vendor/
+src/generated/
+src/pub/media/
+src/var/cache/
+src/var/log/
+src/var/session/
+src/var/tmp/
+src/var/view_preprocessed/
+src/var/page_cache/
+src/var/generation/
+src/var/report/
+src/var/log/
+src/var/session/
+src/var/tmp/
