@@ -152,9 +152,7 @@ This project includes three custom Magento modules:
 ### 1. KitchenGallery Module
 
 A complete kitchen gallery management system with:
-- **Kitchens**: Full CRUD with image upload, WYSIWYG editor, categories
-- **Categories**: Category management for organizing kitchens
-- **Gallery**: Gallery view (coming soon)
+- **Kitchens**: Full CRUD  
 
 **Admin Access:**
 - Menu: **KitchenGallery** → **Kitchens** or **Category**
@@ -162,15 +160,12 @@ A complete kitchen gallery management system with:
 
 **Features:**
 - Admin grid with filters and search
-- Image upload and thumbnails
-- Category dropdown selection
 - Status management (Enabled/Disabled)
 
 ### 2. SimpleEntity Module
 
 A basic CRUD entity module demonstrating Magento 2 module development:
 - Admin grid and form
-- Status management
 - GraphQL API
 
 **Admin Access:**
@@ -281,7 +276,3 @@ bin/magento setup:di:compile
 - **Docker Setup**: Based on [Mark Shust's Docker Configuration](https://github.com/markshust/docker-magento)
 - **Module Development**: See individual module README files in `src/app/code/Vendor/ModuleName/`
 
-
----
-
-**Happy Coding! 🎉**
